@@ -16,7 +16,7 @@ import {ans} from "./config.js"
 const provider = new GoogleAuthProvider();
 
   const firebaseApp = initializeApp({
-    apiKey: ans.MY_KEY,
+    apiKey: ans.MY_KEY, //use your api key
     authDomain: "sih24-b12f2.firebaseapp.com",
     projectId: "sih24-b12f2",
     storageBucket: "sih24-b12f2.appspot.com",
