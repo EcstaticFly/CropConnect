@@ -1,0 +1,65 @@
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.your-orders{
+    background-color: rgb(255, 255, 255);
+    padding:20px 20px 1px 20px;
+    padding-left: 49px;
+    width:100%;
+  
+}
+.menu{
+    background-color: rgb(255, 255, 255);
+    padding-left:50px;
+}
+a{
+    cursor:pointer;
+    text-decoration: none;
+    color:rgb(79, 79, 79);
+}
+th{
+   
+    padding-right:20px;
+
+}
+.invoices-upper-box{
+    margin:20px;
+    color:rgb(112, 113, 112);
+    width:100%;
+}
+.invoices-upper-box th{
+    padding-left:25px;
+}
+
+
+.invoice-lower-box{
+    width:100%;
+    height:300px;
+    background-color: rgb(255, 255, 255);
+     text-align:center;
+}
+
+.no-invoices-2{
+    font-size:25px;
+    font-weight:bold;
+    padding-top:70px;
+    padding-bottom:0px;
+    color: rgb(112, 113, 112);
+}
+.no-invoices-3{
+    font-size: x-small;
+    color: rgb(112, 113, 112);
+
+}
+.no-pickups{
+    font-size:25px;
+    font-weight:bold;
+    padding-top:90px;
+    padding-bottom:0px;
+    color: rgb(112, 113, 112);
+}
+
+.lining-orders{
+    width: 90%;
+    margin: 0 5%;
+}

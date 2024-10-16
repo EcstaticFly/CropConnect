@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/seller_signup.css">
+    <title>Document</title>
+    <style>
+        .seller-button{
+            background: none!important;
+            border: none;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 4px;
+            padding-top: 4px;
+            /*optional*/
+            font-family: arial, sans-serif;
+            /*input has OS specific font-family*/
+            color: #069;
+            /* text-decoration: underline; */
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+    <%if(message.length!=0){%>
+        <div class="container">
+            <div class="alert alert-<%=message[1]%> w-50" id="myAlert" role="alert">
+              <div class="row">
+               <div class="col-10 text-center mt-1">
+                <%= message[0] %>
+               </div>
+               <div class="col-2">
+                <button class="btn btn-link" id="close"><i class="fa-solid fa-xmark"></i></button>
+                
+               </div>
+              </div>
+            </div>  
+           </div>
+     <%}%>
+    <div class="body">
+        <div><h2>Sign Up</h2></div>
+        <br>
+        <form action="/create-seller-account" method="POST">
+            <div class="name">
+                <div><i class="fa-solid fa-user"></i></div>
+                <div><input type="name" name="sellerName" required id="username" placeholder="Full Name"></div>
+            </div>
+            <div class="line"><hr></div>
+            
+            
+            <div class="name">
+                <div class="mail"><i class="fa-solid fa-envelope"></i></div>
+                <div><input type="email" name="sellerEmail" required id="email" placeholder="Email" ></div>
+                
+            </div>
+            <div class="line"><hr></div>
+            <div class="name1">
+                <div class="icon"><i class="fa-solid fa-lock"></i></div>
+                <div><input type="password" name="sellerPassword" placeholder="Password" required ></div>
+                
+            </div>
+            <div class="line"><hr></div>
+            
+            
+            <div class="terms">By singing up,you agree to GrownBy's <b>terms and conditions.</b></div>
+            <br>
+            <div class="reg"><button type="submit" class="btn btn seller-button" ><b>Register</b></button></div>
+        </form>
+        <br>
+        <div class="para"><form action="/seller-sign-in-page" method="get">Already have an account?<button type="submit" name="sellerSignIn" class="seller-button"><b>Sign in.</b></button></form></div>
+        <br>
+        <div class="lastline">
+            <div class="line1"><hr></div>
+            <div><b>or</b></div>
+            <div class="line2"><hr></div>
+        </div>
+        <br>
+        
+        
+        <div class="reg" style="background-color:#DB4437 ;"><i class="fa-brands fa-google"></i><a href="#"><button type="button" class="btn btn"><b>Login with Google</b></button></a></div>
+
+    </div>
+    
+    <script>
+ 
+        function vanish(){
+         $('#myAlert').fadeOut('fast');
+        }
+       
+        $("#close").click(vanish)
+       
+        $(document).ready(function () {   
+          setTimeout(function () {
+            vanish()
+          }, 2850);
+        });
+         </script>
+         <script src="index.js"></script>
+</body>
+</html>

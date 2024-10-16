@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.location {
+    margin-top: 3rem;
+    margin-left: 3rem;
+    /* margin-right: 3rem; */
+}
+
+.location-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.location-section-image img {
+    width: 50vw;
+    height: 56vh;
+    border-radius: 0.7rem;
+}
+
+.location-section-address {
+    margin-left: 3rem;
+    margin-top: 2rem;
+    position: relative;
+}
+
+.location-section-address-ex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.location-section-address-ex h1 {
+    font-size: 1.7rem;
+    line-height: 1.35;
+    font-weight: 800;
+}
+
+.location-section-address-ex p {
+    font-size: 1.2rem;
+}
+
+.location-section-address img {
+    border-radius: 100%;
+    height: 5rem;
+    width: 5rem;
+    margin-right: 0.8rem;
+}
+
+.shop-now {
+    width: 95%;
+    margin: 0 2.5%;
+    padding: 0.6rem 1rem;
+    background-color: rgb(109, 190, 75);
+    border-radius: 0.7rem;
+    border: 1px solid rgb(109, 190, 75);
+    font-size: 1.1rem;
+    color: rgb(109, 190, 75);
+    margin-top: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.shop-now:hover {
+    border: 1px solid rgb(109, 190, 75, 0.6);
+    background-color: rgb(109, 190, 75, 0.6);
+}
+
+#fav-sh-button {
+    display: flex;
+}
+
+
+.favorite {
+    width: 47.5%;
+    margin-left: 2.5%;
+    color: #6dbe4b;
+    font-size: 1.1rem;
+    background-color: white;
+    border-radius: 0.7rem;
+    border-color: rgb(109, 190, 75);
+    border: 2px solid rgb(109, 190, 75);
+    padding: 0.4rem 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.favorite:hover {
+    border-color: rgb(109, 190, 75, 0.4);
+    border: 2px solid rgb(109, 190, 75, 0.4);
+    color: #a0cb8e;
+}
+
+.favorite img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.share {
+    width: 45%;
+    margin-left: 2.5%;
+    color: #6dbe4b;
+    font-size: 1.1rem;
+    background-color: white;
+    border-radius: 0.7rem;
+    border-color: rgb(109, 190, 75);
+    border: 2px solid rgb(109, 190, 75);
+    padding: 0.4rem 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.share:hover {
+    border-color: rgb(109, 190, 75, 0.4);
+    border: 2px solid rgb(109, 190, 75, 0.4);
+    color: #a0cb8e;
+}
+
+.share img {
+    width: 1rem;
+    height: 1rem;
+}
+
+#one {
+    margin-top: 3rem;
+    margin-bottom: 1.4rem;
+    color: rgb(221, 221, 221);
+}
+
+.about {
+    margin: 0 3rem;
+}
+
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-section-info {
+    width: 70%;
+}
+
+.about-section-contact-info {
+    border: 2px solid rgb(27, 20, 20, 0.3);
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 20%;
+
+}
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.contact-us a {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    padding-bottom: 0.3rem;
+}
+
+.contact-us a img {
+    width: 1.7rem;
+    height: 1.7rem;
+    margin-right: 0.5rem;
+}
+
+h2 {
+    padding-top: 0.7rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.social-link img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.2rem;
+}
+
+#two {
+    margin-top: 2.6rem;
+    margin-bottom: 1.7rem;
+    color: rgb(221, 221, 221);
+}
+
+.product {
+    margin-left: 3rem;
+
+}
+
+.product-section-products {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow: hidden;
+    /* justify-content: space-evenly; */
+    align-items: stretch;
+
+}
+
+
+.productCard {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+
+}
+
+.productCard img {
+    /* width: 200px;
+    height: 200px; */
+    width: 15vw;
+    height: 15vw;
+    max-width: 300px;
+
+    border-radius: 0.7rem;
+    cursor: pointer;
+}
+
+.productCard-p1 {
+    margin-top: 0.7rem;
+}
+
+.productCard-p1,
+.productCard-p2 {
+    font-size: 1.14rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.productCard-p3 {
+    font-size: 0.9rem;
+    font-weight: 200;
+    cursor: pointer;
+
+}
+
+h3 {
+    padding-bottom: 1.4rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+
+hr {
+    width: 92%;
+    margin: 0 4%;
+}
+
+.reviews {
+    margin-left: 3rem;
+    margin-top: 1rem;
+}
+
+.review-section-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reviewCard {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    border: 1.1px solid rgb(12, 12, 12, 0.2);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-right: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.reviewCard .review-profile {
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.review-profile img {
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-right: 0.4rem;
+}
+
+.star img {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-top: 0.3rem;
+}
+
+.add-review {
+    margin-left: 2.6rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.add-review button {
+    padding: 0.5rem 5rem;
+    font-size: 1rem;
+    color: #6dbe4b;
+    font-weight: 600;
+    background-color: white;
+    border-radius: 0.5rem;
+    border: 1.2px solid #6dbe4b;
+    cursor: pointer;
+}
+
+.add-review button:hover {
+    color: #b1d7a1;
+    border: 1.2px solid #b1d7a1;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .location-section-image img {
+        width: 90vw;
+        height: 60vh;
+    }
+    .location-section-address{
+        width: 90vw;
+        margin-left: 0;
+    }
+    .about-section-info{
+        width: 60%;
+    }
+    .about-section-contact-info{
+        width: 35%;
+    }
+    
+}
+#hiding{
+    display: none;
+}
+
+@media screen and (max-width: 730px){
+    
+    .about-section-info{
+        width: 95%;
+    }
+    .about-section-contact-info{
+        width: 100%;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        padding-top: 1rem;   
+    }
+    #hiding{
+        display: inline;
+        width: 100vw;
+        margin-top: 2rem;
+    }
+    .productCard{
+        width: 35vw;
+    }
+    .location-section-image img{
+        margin-right: 2rem;
+    }
+    .reviewCard{
+        width: 35vw;
+    }
+}    
+
+@media screen and (max-width: 920px){
+    .productCard{
+        width: 18vw;
+    }
+}

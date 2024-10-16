@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/seller_profile.css">
+    <title>Document</title>
+    <style>
+        h2{
+            text-align: center;
+            
+        }
+        #buyNow{
+            padding-left: 40%;
+            border-radius: 1.2rem;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <%-include("partials/header2.ejs",{p:p})%>
+    <h2>Your Cart</h2>
+    <div class="product-section-products">
+        <%for(let i=0;i<p;i++){%>
+            <%var m=`product-section-products-${p+1}`%>
+            <div class="<%=m%> productCard">
+                <div><img src="image\seller-profile\40849c2a73e24ac58a33f0460bc3b08515da496b_400x400" alt=""></div>
+                <div>
+                    <p class="productCard-p1">Vegetable</p>
+                    <p class="productCard-p3">$156.00 for 4 shares</p>
+                </div>
+            </div>
+        <%}%>
+    </div>
+    
+    <button type="button" id="buyNow">BUY NOW</button>
+    <%-include("partials/footer.ejs")%>
+</body>
+</html>

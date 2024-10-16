@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+footer{
+    /* height: 20vw; */
+    background-color: rgba(16, 46, 4, 0.977);
+    color: white;
+    padding: 3rem 2rem 3rem 3rem;
+}
+.tittle{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 2rem;
+}
+.tittle p{
+    display: inline;
+}
+.footer-flex{
+    width: 80%;
+    display: flex;
+    justify-content:space-around;
+    
+}
+.shop .sell .company{
+    display: flex;
+    flex-direction: column;
+}
+
+.shop div, .sell div, .company div{
+    padding-top: 0.8rem;
+    color: white;
+}
+.shop div a, .sell div a, .company div a{
+    color: white;
+}
+.lining{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    margin-right: 2%;
+    
+    
+}
+.tittle-name{
+    font-size: 1.6rem;
+    font-weight: 800;
+    font-style:oblique;
+    font-family: cursive;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.rights{
+    padding-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.social-sites{
+
+    display: flex;
+    align-items: center;
+
+}
+.social-sites div{
+    padding-right: 0.7rem;
+}

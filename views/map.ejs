@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Places API with Live Location</title>
+    <link rel="stylesheet" href="map.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #location-section {
+            display: flex;
+        }
+
+        h1 {
+            margin-top: 2.3rem;
+            margin-left: 1.2rem;
+            font-size: 1.7rem;
+            font-weight: 700;
+        }
+
+        .farm-card-1,
+        .farm-card-2,
+        .farm-card-3 {
+            border: 1px solid rgba(0, 0, 0, 0.575);
+            margin-left: 2.4rem;
+            border-radius: 0.6rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .farm-card-1-photo img {
+            height: 150px;
+            width: 150px;
+            border-radius: 100%;
+
+        }
+
+       
+
+        h2 {
+            margin-bottom: 0.2rem;
+        }
+
+        .distance-from-you {
+            margin-top: 0.3rem;
+            color: rgb(29, 126, 29);
+        }
+
+        .farm-card-2 img {
+            width: 100px;
+            height: 100px;
+            padding: 2rem 1.4rem;
+        }
+
+        .farm-card-3 img {
+            width: 120px;
+            height: 120px;
+            padding: 1.4rem 2rem 1rem 0;
+        }
+        
+        .div1 {
+  /* width: 60px;
+  height: 60px; */
+  
+  /* background-color: #ff6699; */
+  animation: 2s fadeIn;
+  animation-fill-mode: forwards;
+  
+  visibility: hidden;
+}
+
+/* .div1:hover {
+  background-color: #123;
+} */
+
+@keyframes fadeIn {
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+.div2 {
+  /* width: 60px;
+  height: 60px; */
+  
+  /* background-color: #ff6699; */
+  animation: 1s fadeIn;
+  animation-fill-mode: forwards;
+  
+  visibility: hidden;
+}
+
+/* .div1:hover {
+  background-color: #123;
+} */
+
+@keyframes fadeIn {
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+
+
+button{
+    background-color: rgb(33, 112, 33);
+    margin-left: 4.5rem;
+    border-radius: 0.5rem;
+
+    padding:0.3rem 0.6rem;
+    /* border: none; */
+    color: white;
+    
+}
+
+
+    </style>
+    
+        
+</head>
+
+<body>
+    <section id="location">
+        <div id="location-section">
+            <div id="map" style="height: 100vh; width: 50%;" class="div2">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3661.3095808098733!2d85.40427927475864!3d23.41318147890196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e5a066e642d1%3A0x4b855ab6c1c43789!2sIIIT%20Ranchi%20New%20Temporary%20Academic%20Building!5e0!3m2!1sen!2sin!4v1725774538289!5m2!1sen!2sin"
+                    width="750" height="810" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <!-- <script src="app.js"></script> -->
+
+            <div class="nearby">
+                <div>
+                    <h1>Nearby Farms</h1>
+                    <hr style="width: 40vw;
+                margin-top: 1rem;
+                margin-bottom: 2rem;
+                margin-left: 1.4rem;">
+                </div>
+
+                <div class="farm-cards div1">
+                    <form action="/seller_profile" method="get">
+                    
+                        <div class="farm-card-1" >
+                            <div class="farm-card-1-photo">
+                                <img src="https://cdn.dribbble.com/users/3951046/screenshots/9890244/84968132_777262839424247_2113766892006014976_n.jpg"
+                                    alt="">
+                            </div>
+                            <div class="farm-card-1-details">
+                                <h2>Suresh's Original Farm</h2>
+                                <h3>Getalu, Ranchi Jharkhand</h3>
+                                <p class="distance-from-you">2.3km away from you</p>
+                            </div>
+                            <button type="submit">GET</button>
+                        </div>
+                    </form>
+                    
+                    <form action="/seller_profile" method="get"></form>
+                        <div class="farm-card-2">
+                            <div class="farm-card-1-photo">
+                                <img src="https://th.bing.com/th/id/OIP.LR7Yzhio1a0aq2zflVF3hAHaEv?rs=1&pid=ImgDetMain"
+                                    alt="">
+                            </div>
+                            <div class="farm-card-1-details">
+                                <h2>Kanhaiya's Dairy Farm</h2>
+                                <h3>Khelgaon, Ranchi Jharkhand</h3>
+                                <p class="distance-from-you">8.6km away from you</p>
+                            </div>
+                            <button type="submit">GET</button>
+                        </div>
+                    </form>
+                    <form action="/seller_profile" method="get">
+                        <div class="farm-card-3">
+                            <div class="farm-card-1-photo">
+                                <img src="https://th.bing.com/th/id/OIP.B2nBTlWx4Mi8vTmWQm9NeQHaH_?rs=1&pid=ImgDetMain"
+                                    alt="">
+                            </div>
+                            <div class="farm-card-1-details">
+                                <h2>Bhagya's Farm</h2>
+                                <h3>Khelgaon, Ranchi Jharkhand</h3>
+                                <p class="distance-from-you">12.6km away from you</p>
+                            </div>
+                            <button type="submit">GET</button>
+                            
+                        </div>
+                    </form>
+                       
+                    
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- <script>
+        setTimeout(function(){
+document.getElementById('div1').style.visibility = "visible";
+},4000);
+    </script> -->
+    <!-- <script>
+        function initMap() {
+            // Check if Geolocation is supported
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const userLocation = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                    };
+
+                    // Initialize the map centered around the user's location
+                    const map = new google.maps.Map(document.getElementById("map"), {
+                        center: userLocation,
+                        zoom: 18,
+                    });
+
+                    // Place a marker at the user's location
+                    new google.maps.Marker.AdvancedMarkerElement({
+                        position: userLocation,
+                        map: map,
+                        title: "You are here!",
+                    });
+
+                    // Find nearby places within a specified radius
+                    findNearbyPlaces(map, userLocation);
+                },
+                    () => {
+                        console.error("Geolocation failed.");
+                    });
+            } else {
+                console.error("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function findNearbyPlaces(map, location) {
+            const service = new google.maps.places.PlacesService(map);
+            const radius = 1500;  // 1500 meters (1.5 km)
+
+            const request = {
+                location: location,
+                radius: radius,  // Search radius in meters
+                type: 'restaurant',  // Find restaurants, change 'type' as needed
+            };
+
+            // Perform the nearby search
+            service.nearbySearch(request, (results, status) => {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    for (let i = 0; i < results.length; i++) {
+                        const place = results[i];
+
+                        // Place a marker for each found place
+                        const marker = new google.maps.Marker({
+                            map: map,
+                            position: place.geometry.location,
+                            title: place.name,
+                        });
+
+                        console.log(`Place: ${place.name}, Address: ${place.vicinity}`);
+                    }
+                } else {
+                    console.error("Places search failed:", status);
+                }
+            });
+        }
+
+        // Initialize the map when the window loads
+        window.onload = initMap;
+
+    </script> -->
+    
+</body>
+
+</html>

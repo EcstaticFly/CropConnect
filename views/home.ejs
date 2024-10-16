@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropConnect</title>
+    
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="google-signin-client_id" content="982671331990-055bkvp3rui4u51t826cfimjrhc5937m.apps.googleusercontent.com">
+    
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+     <style>
+        .content{
+            padding-bottom: 0%;
+            margin-bottom: 0%;
+        }
+        .bigger-link{
+            background: none!important;
+  border: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 4px;
+  padding-top: 4px;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  /* color: #069; */
+  text-decoration: underline;
+  color: aliceblue; 
+    font-size : 1.6rem;
+  cursor: pointer;
+    }
+        .link-not-btn{
+  background: none!important;
+  border: none;
+  /* padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 4px;
+  padding-top: 4px; */
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  /* color: aliceblue; */
+  /* font-size: 1.6rem; */
+  cursor: pointer;
+}
+        
+     </style>
+     <!-- <script>
+        
+     </script> -->
+     <script src="index.js"></script>
+    
+</head>
+
+<body>
+    
+     <%if(message.length!=0){%>
+        <div class="container">
+            <div class="alert alert-<%=message[1]%> w-50" id="myAlert" role="alert">
+              <div class="row">
+               <div class="col-10 text-center mt-1">
+                <%= message[0] %>
+               </div>
+               <div class="col-2">
+                <button class="btn btn-link" id="close"><i class="fa-solid fa-xmark"></i></button>
+                
+               </div>
+              </div>
+            </div>  
+           </div>
+     <%}%>
+    <%if(homeStatus==1){%>
+        <%-include("partials/header.ejs")%>
+    <%}else{%>
+        <%-include("partials/header2.ejs",{p:p})%>
+    <%}%>
+        <div class="top-farmer-image" >
+            <div>
+                <img src="https://s.w-x.co/util/image/w/in-farming_3.jpg?crop=16:9&width=480&format=pjpg&auto=webp&quality=60" alt="farmer_image">
+            </div>
+    
+            <div class="top-farmer-image-start">
+                <div>
+                    <h1>Shop locally from farms</h1>
+                </div>
+                <div class="search-icon">
+                    
+                    <input type="text" id="farm-search" placeholder=" What farm are you looking for?">
+                    <!-- <button id="search-btn" type="button"><i class="fa-solid fa-magnifying-glass"></i></button> -->
+                </div>
+                <div><form action="/farmer-sign-up-page" method="GET"><button type="submit" id="farmer-seller" class="bigger-link">Are you a farmer? Start selling on Farmers</button></form></div>
+                <div><form action="/explore-map" method="GET"><button type="submit" class="bigger-link">Explore nearby farms</button></form></div> 
+                <!-- no form here -->
+                </div>
+                
+            </div>
+        </div>
+    
+        
+
+
+            <div class="content">
+                <div class="content-search">
+                    <div class="content-search-farms">
+                        <div>
+                            <p>Farms selling near </p>
+                        </div>
+                        <div>
+
+                            <input type="text" placeholder="Begusarai">
+                        </div>
+                    </div>
+                    <div class="map-explore">
+                        <i class="fa-regular fa-map"></i>
+                        <form action="/explore-map" method="GET"><button type="submit" class="link-not-btn">Explore on a map</button></form>
+                    </div>
+                </div>
+                <div class="content-boxes">
+                    <div class="content-box1">
+                        <div class="content-box1-seller">
+                            <div><form action="/seller_profile" method="get"><button type="submit" class="link-not-btn">Shop all products</button></form></div>
+                            <div onclick="left1()"><img src="image\IMG-20240905-WA0013.jpg" alt="">
+                            </div>
+                            <div onclick="right1()"><img src="image\IMG-20240905-WA0014.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="content-box1-details">
+                            <div class="content-boxes-seller-details">
+                                <div><img
+                                        src="image\eeecbf22cfac19d1a2aa89e4e39853b854059597_1200x800.unknown"
+                                        alt="lol"></div>
+                                <div>
+                                    <h2>Ramesh's Farm</h2>
+                                    <p>Ranchi, Jharkhand</p>
+                                </div>
+                                <form action="/seller_profile" method="get"><button type="submit" class="link-not-btn">Shop all products</button></form>
+
+                            </div>
+                            <div class="content-boxes-items">
+                                <div class="content-boxes-seller-products">
+                                    <div class="content-boxes-seller-products-card roll-1">
+                                        <div><img
+                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqFk9ZYTKkTz0kdF8ptr4yMFKsNZhWloR0IQ&s"
+                                                alt="wheat-image"></div>
+                                        <div class="content-boxes-seller-product-name">
+                                            <p>Wheat</p>
+                                        </div>
+                                        <div class="content-boxes-seller-product-price">
+                                            <p>Rs. 240 per 5 kg</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-boxes-seller-products">
+                                    <div class="content-boxes-seller-products-card roll-1">
+                                        <div><img
+                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHrxu3bXSzFXfO0Qm2LpOfYitHwzK67CxgQ&s"
+                                                alt=""></div>
+                                        <div class="content-boxes-seller-product-name">
+                                            <p>Black Grapes </p>
+                                        </div>
+                                        <div class="content-boxes-seller-product-price">
+                                            <p>Rs. 341.00 for 9 shares</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-boxes-seller-products">
+                                    <div class="content-boxes-seller-products-card roll-1">
+                                        <div><img
+                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr2IGqO8dHQDzGXEH0xGtNkLSytL-NiMcL_g&s"
+                                                alt="onion-image"></div>
+                                        <div class="content-boxes-seller-product-name">
+                                            <p>Onion </p>
+                                        </div>
+                                        <div class="content-boxes-seller-product-price">
+                                            <p>250 per 5Kg</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-boxes-seller-products">
+                                    <div class="content-boxes-seller-products-card roll-1">
+                                        <div><img
+                                                src="https://www.netmeds.com/images/cms/wysiwyg/blog/2022/03/1647423858_Okra_big_1.jpg"
+                                                alt="ladies-finger-pic"></div>
+                                        <div class="content-boxes-seller-product-name">
+                                            <p>Ladies Finger</p>
+                                        </div>
+                                        <div class="content-boxes-seller-product-price">
+                                            <p>Rs. 343.00 for 9 shares</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-boxes-seller-products">
+                                    <div class="content-boxes-seller-products-card roll-1">
+                                        <div><img
+                                                src="https://www.mccormick.it/wp-content/uploads/2020/05/dati-aggiornati-sulla-produzione-di-mais-nel-mondo-853x480.jpg"
+                                                alt="maize-image"></div>
+                                        <div class="content-boxes-seller-product-name">
+                                            <p>Maize </p>
+                                        </div>
+                                        <div class="content-boxes-seller-product-price">
+                                            <p>Rs. 344.00 for 9 shares</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-boxes-seller-products">
+                                    <div class="content-boxes-seller-products-card roll-1">
+                                        <div><img
+                                                src="https://cdn.mos.cms.futurecdn.net/iC7HBvohbJqExqvbKcV3pP-1200-80.jpg"
+                                                alt=""></div>
+                                        <div class="content-boxes-seller-product-name">
+                                            <p>Potato</p>
+                                        </div>
+                                        <div class="content-boxes-seller-product-price">
+                                            <p>Rs.345.00 for 9 shares</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-boxes-seller-products">
+                                    <div class="content-boxes-seller-products-card roll-1">
+                                        <div><img
+                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWZ0IEUxP-_7Tnje8Z4ZWYIRlNOmFm9mNZYA&s"
+                                                alt="cauliflower-image"></div>
+                                        <div class="content-boxes-seller-product-name">
+                                            <p>Cauliflower </p>
+                                        </div>
+                                        <div class="content-boxes-seller-product-price">
+                                            <p>Rs.26.00 for 9 shares</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-boxes-seller-products">
+                                    <div class="content-boxes-seller-products-card roll-1">
+                                        <div><img
+                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNsRoqxYChSIRFWTU8qFH8-TPDIxQZ3LNtOw&s"
+                                                alt=""></div>
+                                        <div class="content-boxes-seller-product-name">
+                                            <p>Guava </p>
+                                        </div>
+                                        <div class="content-boxes-seller-product-price">
+                                            <p>Rs. 28 per kg</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-boxes-seller-products">
+                                    <div class="content-boxes-seller-products-card roll-1">
+                                        <div><img
+                                                src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                alt=""></div>
+                                        <div class="content-boxes-seller-product-name">
+                                            <p>Vegertable Share (Weekly) </p>
+                                        </div>
+                                        <div class="content-boxes-seller-product-price">
+                                            <p>RS. 48.00 for 9 shares</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-boxes-seller-products">
+                                    <div class="content-boxes-seller-products-card roll-1">
+                                        <div><img
+                                                src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                alt=""></div>
+                                        <div class="content-boxes-seller-product-name">
+                                            <p>Vegertable Share (Weekly) </p>
+                                        </div>
+                                        <div class="content-boxes-seller-product-price">
+                                            <p>RS. 19.00 for 9 shares</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-boxes-seller-products">
+                                    <div class="content-boxes-seller-products-card roll-1">
+                                        <div><img
+                                                src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                alt=""></div>
+                                        <div class="content-boxes-seller-product-name">
+                                            <p>Vegertable Share (Weekly) </p>
+                                        </div>
+                                        <div class="content-boxes-seller-product-price">
+                                            <p>Rs 650.00 for 9 shares</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-boxes-seller-products">
+                                    <div class="content-boxes-seller-products-card roll-1">
+                                        <div><img
+                                                src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                alt=""></div>
+                                        <div class="content-boxes-seller-product-name">
+                                            <p>Vegertable Share (Weekly) </p>
+                                        </div>
+                                        <div class="content-boxes-seller-product-price">
+                                            <p>Rs. 251.00 for 9 shares</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="content-box2">
+                        <div class="content-box1">
+                            <div class="content-box1-seller">
+                                <div><form action="/seller_profile" method="get"><button type="submit" class="link-not-btn">Shop all products</button></form></div>
+                                <div onclick="left2()"><img src="image\IMG-20240905-WA0013.jpg"
+                                        alt=""></div>
+                                <div onclick="right2()"><img src="image\IMG-20240905-WA0014.jpg"
+                                        alt=""></div>
+                            </div>
+                            <div class="content-box1-details">
+                                <div class="content-boxes-seller-details">
+                                    <div><img
+                                            src="https://graphicsfamily.com/wp-content/uploads/2020/08/agriculture-logo-design-free-downlaod-scaled.jpg"
+                                            alt="lol"></div>
+                                    <div>
+                                        <h2>Suyash Agri Farm</h2>
+                                        <p>Parsa, Bihar</p>
+                                    </div>
+                                    <form action="/seller_profile" method="get"><button type="submit" class="link-not-btn">Shop all products</button></form>
+
+                                </div>
+                                <div class="content-boxes-items">
+                                    <div class="content-boxes-seller-products">
+                                        <div class="content-boxes-seller-products-card roll-2">
+                                            <div><img
+                                                    src="https://media.post.rvohealth.io/wp-content/uploads/2020/09/AN313-Tomatoes-732x549-Thumb-732x549.jpg"
+                                                    alt="tomato-image"></div>
+                                            <div class="content-boxes-seller-product-name">
+                                                <p>Tomato</p>
+                                            </div>
+                                            <div class="content-boxes-seller-product-price">
+                                                <p>$342.00 for 9 shares</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-boxes-seller-products">
+                                        <div class="content-boxes-seller-products-card roll-2">
+                                            <div><img
+                                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR3x5G6RxYUa3kGkFM6X6bkVQiBXLp17UzXg&s"
+                                                    alt="watermelon-image"></div>
+                                            <div class="content-boxes-seller-product-name">
+                                                <p>Watermelon </p>
+                                            </div>
+                                            <div class="content-boxes-seller-product-price">
+                                                <p>$342.00 for 9 shares</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-boxes-seller-products">
+                                        <div class="content-boxes-seller-products-card roll-2">
+                                            <div><img
+                                                    src="https://cdn.britannica.com/70/158370-050-CC2F25D4/Carrots-Apiales-members.jpg"
+                                                    alt="carrot-image"></div>
+                                            <div class="content-boxes-seller-product-name">
+                                                <p>Carrot </p>
+                                            </div>
+                                            <div class="content-boxes-seller-product-price">
+                                                <p>$342.00 for 9 shares</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-boxes-seller-products">
+                                        <div class="content-boxes-seller-products-card roll-2">
+                                            <div><img
+                                                    src="https://m.media-amazon.com/images/I/31LHwtYjg7L.AC_UF1000,1000_QL80.jpg"
+                                                    alt="cumcumber-image"></div>
+                                            <div class="content-boxes-seller-product-name">
+                                                <p>Cumcumber </p>
+                                            </div>
+                                            <div class="content-boxes-seller-product-price">
+                                                <p>$342.00 for 9 shares</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-boxes-seller-products">
+                                        <div class="content-boxes-seller-products-card roll-2">
+                                            <div><img
+                                                    src="https://media.post.rvohealth.io/wp-content/uploads/2020/09/Do_Apples_Affect_Diabetes_and_Blood_Sugar_Levels-732x549-thumbnail-1-732x549.jpg"
+                                                    alt="apple-image"></div>
+                                            <div class="content-boxes-seller-product-name">
+                                                <p>Vegertable Share (Weekly) </p>
+                                            </div>
+                                            <div class="content-boxes-seller-product-price">
+                                                <p>$342.00 for 9 shares</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-boxes-seller-products">
+                                        <div class="content-boxes-seller-products-card roll-2">
+                                            <div><img
+                                                    src="https://upload.wikimedia.org/wikipedia/commons/5/5c/FrenchMarketPumpkinsB.jpg"
+                                                    alt="pumpkin-image"></div>
+                                            <div class="content-boxes-seller-product-name">
+                                                <p>Pumpkin </p>
+                                            </div>
+                                            <div class="content-boxes-seller-product-price">
+                                                <p>$342.00 for 9 shares</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-boxes-seller-products">
+                                        <div class="content-boxes-seller-products-card roll-2">
+                                            <div><img
+                                                    src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                    alt=""></div>
+                                            <div class="content-boxes-seller-product-name">
+                                                <p>Vegertable Share (Weekly) </p>
+                                            </div>
+                                            <div class="content-boxes-seller-product-price">
+                                                <p>$342.00 for 9 shares</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-boxes-seller-products">
+                                        <div class="content-boxes-seller-products-card roll-2">
+                                            <div><img
+                                                    src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                    alt=""></div>
+                                            <div class="content-boxes-seller-product-name">
+                                                <p>Vegertable Share (Weekly) </p>
+                                            </div>
+                                            <div class="content-boxes-seller-product-price">
+                                                <p>$342.00 for 9 shares</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-boxes-seller-products">
+                                        <div class="content-boxes-seller-products-card roll-2">
+                                            <div><img
+                                                    src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                    alt=""></div>
+                                            <div class="content-boxes-seller-product-name">
+                                                <p>Vegertable Share (Weekly) </p>
+                                            </div>
+                                            <div class="content-boxes-seller-product-price">
+                                                <p>$342.00 for 9 shares</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-boxes-seller-products">
+                                        <div class="content-boxes-seller-products-card roll-2">
+                                            <div><img
+                                                    src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                    alt=""></div>
+                                            <div class="content-boxes-seller-product-name">
+                                                <p>Vegertable Share (Weekly) </p>
+                                            </div>
+                                            <div class="content-boxes-seller-product-price">
+                                                <p>$342.00 for 9 shares</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-boxes-seller-products">
+                                        <div class="content-boxes-seller-products-card roll-2">
+                                            <div><img
+                                                    src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                    alt=""></div>
+                                            <div class="content-boxes-seller-product-name">
+                                                <p>Vegertable Share (Weekly) </p>
+                                            </div>
+                                            <div class="content-boxes-seller-product-price">
+                                                <p>$342.00 for 9 shares</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-boxes-seller-products">
+                                        <div class="content-boxes-seller-products-card roll-2">
+                                            <div><img
+                                                    src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                    alt=""></div>
+                                            <div class="content-boxes-seller-product-name">
+                                                <p>Vegertable Share (Weekly) </p>
+                                            </div>
+                                            <div class="content-boxes-seller-product-price">
+                                                <p>$342.00 for 9 shares</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="content-box3">
+                            <div class="content-box1">
+                                <div class="content-box1-seller">
+                                    <div><form action="/seller_profile" method="get"><button type="submit" class="link-not-btn">Shop all products</button></form></div>
+                                    <div onclick="left3()"><img src="image\IMG-20240905-WA0013.jpg"
+                                            alt=""></div>
+                                    <div onclick="right3()"><img src="image\IMG-20240905-WA0014.jpg"
+                                            alt=""></div>
+                                </div>
+                                <div class="content-box1-details">
+                                    <div class="content-boxes-seller-details">
+                                        <div><img
+                                                src="https://images.template.net/wp-content/uploads/2017/01/09123114/Farm-Logo.jpg"
+                                                alt="lol"></div>
+                                        <div>
+                                            <h2>Homefarm</h2>
+                                            <p>Ayodhya, Uttar Pradesh</p>
+                                        </div>
+                                        <form action="/seller_profile" method="get"><button type="submit" class="link-not-btn">Shop all products</button></form>
+
+                                    </div>
+                                    <div class="content-boxes-items">
+                                        <div class="content-boxes-seller-products">
+                                            <div class="content-boxes-seller-products-card roll-3">
+                                                <div><img
+                                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1nHmlJ9yvJ6zJQxSsvn5sGAhTQvQnehG64g&s"
+                                                        alt="cabbage-image"></div>
+                                                <div class="content-boxes-seller-product-name">
+                                                    <p>Cabbage</p>
+                                                </div>
+                                                <div class="content-boxes-seller-product-price">
+                                                    <p>$342.00 for 9 shares</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-boxes-seller-products">
+                                            <div class="content-boxes-seller-products-card roll-3">
+                                                <div><img
+                                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEFIf1LwpQrKWxz9lSfn976uLBL9n5g18CUQ&s"
+                                                        alt=""></div>
+                                                <div class="content-boxes-seller-product-name">
+                                                    <p>Spinach</p>
+                                                </div>
+                                                <div class="content-boxes-seller-product-price">
+                                                    <p>$342.00 for 9 shares</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-boxes-seller-products">
+                                            <div class="content-boxes-seller-products-card roll-3">
+                                                <div><img
+                                                        src="https://cdn.jwplayer.com/v2/media/bq2mWbF0/thumbnails/nDSgcwfb.jpg"
+                                                        alt="potato-image"></div>
+                                                <div class="content-boxes-seller-product-name">
+                                                    <p>Potato </p>
+                                                </div>
+                                                <div class="content-boxes-seller-product-price">
+                                                    <p>$342.00 for 9 shares</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-boxes-seller-products">
+                                            <div class="content-boxes-seller-products-card roll-3">
+                                                <div><img
+                                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1oUc4hyMH-UZu-ZXFlVGUsj9VtVJsAwD0BQ&s"
+                                                        alt="maize-image"></div>
+                                                <div class="content-boxes-seller-product-name">
+                                                    <p>Maize</p>
+                                                </div>
+                                                <div class="content-boxes-seller-product-price">
+                                                    <p>$342.00 for 9 shares</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-boxes-seller-products">
+                                            <div class="content-boxes-seller-products-card roll-3">
+                                                <div><img
+                                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ-pfnORwRYd8mHYccBBpg0qfBHU9ppLc_5Q&s"
+                                                        alt="onion-image"></div>
+                                                <div class="content-boxes-seller-product-name">
+                                                    <p>Onion</p>
+                                                </div>
+                                                <div class="content-boxes-seller-product-price">
+                                                    <p>$342.00 for 9 shares</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-boxes-seller-products">
+                                            <div class="content-boxes-seller-products-card roll-3">
+                                                <div><img
+                                                        src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                        alt=""></div>
+                                                <div class="content-boxes-seller-product-name">
+                                                    <p>Vegertable Share (Weekly) </p>
+                                                </div>
+                                                <div class="content-boxes-seller-product-price">
+                                                    <p>$342.00 for 9 shares</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-boxes-seller-products">
+                                            <div class="content-boxes-seller-products-card roll-3">
+                                                <div><img
+                                                        src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                        alt=""></div>
+                                                <div class="content-boxes-seller-product-name">
+                                                    <p>Vegertable Share (Weekly) </p>
+                                                </div>
+                                                <div class="content-boxes-seller-product-price">
+                                                    <p>$342.00 for 9 shares</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-boxes-seller-products">
+                                            <div class="content-boxes-seller-products-card roll-3">
+                                                <div><img
+                                                        src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                        alt=""></div>
+                                                <div class="content-boxes-seller-product-name">
+                                                    <p>Vegertable Share (Weekly) </p>
+                                                </div>
+                                                <div class="content-boxes-seller-product-price">
+                                                    <p>$342.00 for 9 shares</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-boxes-seller-products">
+                                            <div class="content-boxes-seller-products-card roll-3">
+                                                <div><img
+                                                        src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                        alt=""></div>
+                                                <div class="content-boxes-seller-product-name">
+                                                    <p>Vegertable Share (Weekly) </p>
+                                                </div>
+                                                <div class="content-boxes-seller-product-price">
+                                                    <p>$342.00 for 9 shares</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-boxes-seller-products">
+                                            <div class="content-boxes-seller-products-card roll-3">
+                                                <div><img
+                                                        src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                        alt=""></div>
+                                                <div class="content-boxes-seller-product-name">
+                                                    <p>Vegertable Share (Weekly) </p>
+                                                </div>
+                                                <div class="content-boxes-seller-product-price">
+                                                    <p>$342.00 for 9 shares</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-boxes-seller-products">
+                                            <div class="content-boxes-seller-products-card roll-3">
+                                                <div><img
+                                                        src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                        alt=""></div>
+                                                <div class="content-boxes-seller-product-name">
+                                                    <p>Vegertable Share (Weekly) </p>
+                                                </div>
+                                                <div class="content-boxes-seller-product-price">
+                                                    <p>$342.00 for 9 shares</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-boxes-seller-products">
+                                            <div class="content-boxes-seller-products-card roll-3">
+                                                <div><img
+                                                        src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                        alt=""></div>
+                                                <div class="content-boxes-seller-product-name">
+                                                    <p>Vegertable Share (Weekly) </p>
+                                                </div>
+                                                <div class="content-boxes-seller-product-price">
+                                                    <p>$342.00 for 9 shares</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="content-box4">
+                                <div class="content-box1">
+                                    <div class="content-box1-seller">
+                                        <div><form action="/seller_profile" method="get"><button type="submit" class="link-not-btn">Shop all products</button></form></div>
+                                        <div onclick="left4()"><img
+                                                src="image\IMG-20240905-WA0013.jpg" alt=""></div>
+                                        <div onclick="right4()"><img
+                                                src="image\IMG-20240905-WA0014.jpg" alt=""></div>
+                                    </div>
+                                    <div class="content-box1-details">
+                                        <div class="content-boxes-seller-details">
+                                            <div><img
+                                                    src="https://th.bing.com/th/id/OIP.myPzKZyZVs0VQ1bft_VB1AHaHB?w=1000&h=949&rs=1&pid=ImgDetMain"
+                                                    alt="lol"></div>
+                                            <div>
+                                                <h2>Sita Organic Farm</h2>
+                                                <p>Chandigarh, Punjab</p>
+                                            </div>
+                                            <form action="/seller_profile" method="get"><button type="submit" class="link-not-btn">Shop all products</button></form>
+                                        </div>
+                                        <div class="content-boxes-items">
+                                            <div class="content-boxes-seller-products">
+                                                <div
+                                                    class="content-boxes-seller-products-card roll-4">
+                                                    <div><img
+                                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuOmgr-zA0mnfsWY54K8UK4Ndhh2MP1ZGvXg&s"
+                                                            alt="banana-image"></div>
+                                                    <div class="content-boxes-seller-product-name">
+                                                        <p>Banana </p>
+                                                    </div>
+                                                    <div class="content-boxes-seller-product-price">
+                                                        <p>70 per Dozen</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-boxes-seller-products">
+                                                <div
+                                                    class="content-boxes-seller-products-card roll-4">
+                                                    <div><img
+                                                            src="https://image.made-in-china.com/202f0j00URTYLwJEvPpS/2020-New-Crop-Best-Quality-Fresh-White-Reddish-for-Wholesale-Market.jpg"
+                                                            alt="red-reddish-image"></div>
+                                                    <div class="content-boxes-seller-product-name">
+                                                        <p>Red Reddish </p>
+                                                    </div>
+                                                    <div class="content-boxes-seller-product-price">
+                                                        <p>$342.00 for 9 shares</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-boxes-seller-products">
+                                                <div
+                                                    class="content-boxes-seller-products-card roll-4">
+                                                    <div><img
+                                                            src="https://5.imimg.com/data5/ANDROID/Default/2021/6/JM/YC/BB/129058311/img-20210613-132223-jpg-500x500.jpg"
+                                                            alt="green-chilly"></div>
+                                                    <div class="content-boxes-seller-product-name">
+                                                        <p>Green Chilli</p>
+                                                    </div>
+                                                    <div class="content-boxes-seller-product-price">
+                                                        <p>$342.00 for 9 shares</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-boxes-seller-products">
+                                                <div
+                                                    class="content-boxes-seller-products-card roll-4">
+                                                    <div><img
+                                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrYmJE4sVoD0jfY4UTHT0ePzWVgkZsbXACCQ&s"
+                                                            alt="pea-image"></div>
+                                                    <div class="content-boxes-seller-product-name">
+                                                        <p>Pea </p>
+                                                    </div>
+                                                    <div class="content-boxes-seller-product-price">
+                                                        <p>$342.00 for 9 shares</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-boxes-seller-products">
+                                                <div
+                                                    class="content-boxes-seller-products-card roll-4">
+                                                    <div><img
+                                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGDlhohW4uBYguzppHOAG5hKPYgdqRtE4Alw&s"
+                                                            alt="papaya-image"></div>
+                                                    <div class="content-boxes-seller-product-name">
+                                                        <p>Papaya</p>
+                                                    </div>
+                                                    <div class="content-boxes-seller-product-price">
+                                                        <p>$342.00 for 9 shares</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-boxes-seller-products">
+                                                <div
+                                                    class="content-boxes-seller-products-card roll-4">
+                                                    <div><img
+                                                            src="https://i.etsystatic.com/35769020/r/il/40c1b0/4071695965/il_570xN.4071695965_57me.jpg"
+                                                            alt="cumcumber-image"></div>
+                                                    <div class="content-boxes-seller-product-name">
+                                                        <p>Cumcumber</p>
+                                                    </div>
+                                                    <div class="content-boxes-seller-product-price">
+                                                        <p>$342.00 for 9 shares</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-boxes-seller-products">
+                                                <div
+                                                    class="content-boxes-seller-products-card roll-4">
+                                                    <div><img
+                                                            src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                            alt=""></div>
+                                                    <div class="content-boxes-seller-product-name">
+                                                        <p>Vegertable Share (Weekly) </p>
+                                                    </div>
+                                                    <div class="content-boxes-seller-product-price">
+                                                        <p>$342.00 for 9 shares</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-boxes-seller-products">
+                                                <div
+                                                    class="content-boxes-seller-products-card roll-4">
+                                                    <div><img
+                                                            src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                            alt=""></div>
+                                                    <div class="content-boxes-seller-product-name">
+                                                        <p>Vegertable Share (Weekly) </p>
+                                                    </div>
+                                                    <div class="content-boxes-seller-product-price">
+                                                        <p>$342.00 for 9 shares</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-boxes-seller-products">
+                                                <div
+                                                    class="content-boxes-seller-products-card roll-4">
+                                                    <div><img
+                                                            src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                            alt=""></div>
+                                                    <div class="content-boxes-seller-product-name">
+                                                        <p>Vegertable Share (Weekly) </p>
+                                                                        </div>
+                                                                        <div class="content-boxes-seller-product-price">
+                                                                            <p>$342.00 for 9 shares</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="content-boxes-seller-products">
+                                                                    <div
+                                                                        class="content-boxes-seller-products-card roll-4">
+                                                                        <div><img
+                                                                                src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                                                alt=""></div>
+                                                                        <div class="content-boxes-seller-product-name">
+                                                                            <p>Vegertable Share (Weekly) </p>
+                                                                        </div>
+                                                                        <div class="content-boxes-seller-product-price">
+                                                                            <p>$342.00 for 9 shares</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="content-boxes-seller-products">
+                                                                    <div
+                                                                        class="content-boxes-seller-products-card roll-4">
+                                                                        <div><img
+                                                                                src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                                                alt=""></div>
+                                                                        <div class="content-boxes-seller-product-name">
+                                                                            <p>Vegertable Share (Weekly) </p>
+                                                                        </div>
+                                                                        <div class="content-boxes-seller-product-price">
+                                                                            <p>$342.00 for 9 shares</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="content-boxes-seller-products">
+                                                                    <div
+                                                                        class="content-boxes-seller-products-card roll-4">
+                                                                        <div><img
+                                                                                src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                                                alt=""></div>
+                                                                        <div class="content-boxes-seller-product-name">
+                                                                            <p>Vegertable Share (Weekly) </p>
+                                                                        </div>
+                                                                        <div class="content-boxes-seller-product-price">
+                                                                            <p>$342.00 for 9 shares</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-box5">
+                                                        <div class="content-box1">
+                                                            <div class="content-box1-seller">
+                                                                <div><form action="/seller_profile" method="get"><button type="submit" class="link-not-btn">Shop all products</button></form></div>
+                                                                <div onclick="left5()"><img
+                                                                        src="image\IMG-20240905-WA0013.jpg" alt="">
+                                                                </div>
+                                                                <div onclick="right5()"><img
+                                                                        src="image\IMG-20240905-WA0014.jpg" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="content-box1-details">
+                                                                <div class="content-boxes-seller-details">
+                                                                    <div><img
+                                                                            src="https://static.vecteezy.com/system/resources/previews/000/623/023/original/agriculture-business-logo-template-unique-green-vector-image.jpg"
+                                                                            alt="lol"></div>
+                                                                    <div>
+                                                                        <h2>Ram Original Farm</h2>
+                                                                        <p>Begusarai, Bihar</p>
+                                                                    </div>
+                                                                    <form action="/seller_profile" method="get"><button type="submit" class="link-not-btn">Shop all products</button></form>
+
+                                                                </div>
+                                                                <div class="content-boxes-items">
+                                                                    <div class="content-boxes-seller-products">
+                                                                        <div
+                                                                            class="content-boxes-seller-products-card roll-5">
+                                                                            <div><img
+                                                                                    src="https://images.saymedia-content.com/.image/t_share/MjAyMDI0NTE3NzQzMTU4Nzkx/all-about-rice.jpg"
+                                                                                    alt=""></div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-name">
+                                                                                <p>Rice </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-price">
+                                                                                <p>$342.00 for 9 shares</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="content-boxes-seller-products">
+                                                                        <div
+                                                                            class="content-boxes-seller-products-card roll-5">
+                                                                            <div><img
+                                                                                    src="https://media.post.rvohealth.io/wp-content/uploads/2020/08/642x361_How_Wheat_Germ_Benefits_Your_Health.jpg"
+                                                                                    alt=""></div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-name">
+                                                                                <p>Wheat </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-price">
+                                                                                <p>$342.00 for 9 shares</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="content-boxes-seller-products">
+                                                                        <div
+                                                                            class="content-boxes-seller-products-card roll-5">
+                                                                            <div><img
+                                                                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlRdqNAFrM5xY29ZCbNmC3IiOW3ZRznCWXDw&s"
+                                                                                    alt=""></div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-name">
+                                                                                <p>Maize </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-price">
+                                                                                <p>$342.00 for 9 shares</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="content-boxes-seller-products">
+                                                                        <div
+                                                                            class="content-boxes-seller-products-card roll-5">
+                                                                            <div><img
+                                                                                    src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                                                    alt=""></div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-name">
+                                                                                <p>Vegertable Share </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-price">
+                                                                                <p>$342.00 for 9 shares</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="content-boxes-seller-products">
+                                                                        <div
+                                                                            class="content-boxes-seller-products-card roll-5">
+                                                                            <div><img
+                                                                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDhnhqJIj85bgubo4cJR9FeewK6k5WEGyVJg&s"
+                                                                                    alt=""></div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-name">
+                                                                                <p>Cotton </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-price">
+                                                                                <p>$342.00 for 9 shares</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="content-boxes-seller-products">
+                                                                        <div
+                                                                            class="content-boxes-seller-products-card roll-5">
+                                                                            <div><img
+                                                                                    src="https://cdn.mos.cms.futurecdn.net/iC7HBvohbJqExqvbKcV3pP-1200-80.jpg"
+                                                                                    alt=""></div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-name">
+                                                                                <p>Potato</p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-price">
+                                                                                <p>$342.00 for 9 shares</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="content-boxes-seller-products">
+                                                                        <div
+                                                                            class="content-boxes-seller-products-card roll-5">
+                                                                            <div><img
+                                                                                    src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                                                    alt=""></div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-name">
+                                                                                <p>Vegertable Share </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-price">
+                                                                                <p>$342.00 for 9 shares</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="content-boxes-seller-products">
+                                                                        <div
+                                                                            class="content-boxes-seller-products-card roll-5">
+                                                                            <div><img
+                                                                                    src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                                                    alt=""></div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-name">
+                                                                                <p>Vegertable Share (Weekly) </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-price">
+                                                                                <p>$342.00 for 9 shares</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="content-boxes-seller-products">
+                                                                        <div
+                                                                            class="content-boxes-seller-products-card roll-5">
+                                                                            <div><img
+                                                                                    src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                                                    alt=""></div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-name">
+                                                                                <p>Vegertable Share (Weekly) </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-price">
+                                                                                <p>$342.00 for 9 shares</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="content-boxes-seller-products">
+                                                                        <div
+                                                                            class="content-boxes-seller-products-card roll-5">
+                                                                            <div><img
+                                                                                    src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                                                    alt=""></div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-name">
+                                                                                <p>Vegertable Share (Weekly) </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-price">
+                                                                                <p>$342.00 for 9 shares</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="content-boxes-seller-products">
+                                                                        <div
+                                                                            class="content-boxes-seller-products-card roll-5">
+                                                                            <div><img
+                                                                                    src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                                                    alt=""></div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-name">
+                                                                                <p>Vegertable Share (Weekly) </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-price">
+                                                                                <p>$342.00 for 9 shares</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="content-boxes-seller-products">
+                                                                        <div
+                                                                            class="content-boxes-seller-products-card roll-5">
+                                                                            <div><img
+                                                                                    src="image\5e707d99211d5753883fdffc69324fe254935702_400x400.unknown"
+                                                                                    alt=""></div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-name">
+                                                                                <p>Vegertable Share (Weekly) </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="content-boxes-seller-product-price">
+                                                                                <p>$342.00 for 9 shares</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+            
+        
+        <script>
+ 
+            function vanish(){
+             $('#myAlert').fadeOut('fast');
+            }
+           
+            $("#close").click(vanish)
+           
+            $(document).ready(function () {   
+              setTimeout(function () {
+                vanish()
+              }, 2850);
+            });
+             </script>
+    
+    <script>
+
+        var products1 = document.querySelectorAll(".roll-1");
+        let counter1 = 0;
+        function left1() {
+            if (counter1 ==0) {
+                counter1 = products1.length/3-1;
+                
+            }
+            else {
+                counter1--;
+                // counter=counter-3;
+                
+                
+            }
+            scroll1();
+        }
+        function right1() {
+            if(counter1==products1.length/3-1){
+                counter1=0;
+
+            }
+            else{
+                counter1++;
+                // counter=counter+3;
+                
+            }
+            scroll1();
+        }
+        function scroll1() {
+            products1.forEach(function (item) {
+                item.style.transform = `translateX(-${counter1 * 450}px)`
+            })
+        }
+
+
+        var products2 = document.querySelectorAll(".roll-2");
+        let counter2 = 0;
+        function left2() {
+            if (counter2 ==0) {
+                counter2 = products2.length/3-1;
+                
+            }
+            else {
+                counter2--;
+                // counter=counter-3;
+                
+                
+            }
+            scroll2();
+        }
+        function right2() {
+            if(counter2==products2.length/3-1){
+                counter2=0;
+
+            }
+            else{
+                counter2++;
+                // counter=counter+3;
+                
+            }
+            scroll2();
+        }
+        function scroll2() {
+            products2.forEach(function (item) {
+                item.style.transform = `translateX(-${counter2 * 450}px)`
+            })
+        }
+
+
+        var products3 = document.querySelectorAll(".roll-3");
+        let counter3 = 0;
+        function left3() {
+            if (counter3 ==0) {
+                counter3 = products3.length/3-1;
+                
+            }
+            else {
+                counter3--;
+                // counter=counter-3;
+                
+                
+            }
+            scroll3();
+        }
+        function right3() {
+            if(counter3==products3.length/3-1){
+                counter3=0;
+
+            }
+            else{
+                counter3++;
+                // counter=counter+3;
+                
+            }
+            scroll3();
+        }
+        function scroll3() {
+            products3.forEach(function (item) {
+                item.style.transform = `translateX(-${counter3 * 450}px)`
+            })
+        }
+
+
+
+        var products4 = document.querySelectorAll(".roll-4");
+        let counter4 = 0;
+        function left4() {
+            if (counter4 ==0) {
+                counter4 = products4.length/3-1;
+                
+            }
+            else {
+                counter4--;
+                // counter=counter-3;
+                
+                
+            }
+            scroll4();
+        }
+        function right4() {
+            if(counter4==products4.length/3-1){
+                counter4=0;
+
+            }
+            else{
+                counter4++;
+                // counter=counter+3;
+                
+            }
+            scroll4();
+        }
+        function scroll4() {
+            products4.forEach(function (item) {
+                item.style.transform = `translateX(-${counter4 * 450}px)`
+            })
+        }
+
+
+
+
+
+
+        var products5 = document.querySelectorAll(".roll-5");
+        let counter5 = 0;
+        function left5() {
+            if (counter5 ==0) {
+                counter5 = products5.length/3-1;
+                
+            }
+            else {
+                counter5--;
+                // counter=counter-3;
+                
+                
+            }
+            scroll5();
+        }
+        function right5() {
+            if(counter5==products5.length/3-1){
+                counter5=0;
+
+            }
+            else{
+                counter5++;
+                // counter=counter+3;
+                
+            }
+            scroll5();
+        }
+        function scroll5() {
+            products5.forEach(function (item) {
+                item.style.transform = `translateX(-${counter5 * 450}px)`
+            })
+        }
+    </script>
+    <!-- <script src="signin.js"></script> -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- <script>
+        function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    $("#name").text(profile.getName());
+    $("#email").text(profile.getEmail());
+    $("#image").attr('src',profile.getImageUrl);
+    $(".data").css("display","block");
+    $(".g-signin2").css("display","none");
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); 
+  }
+    </script> -->
+
+
+    <%-include("partials/footer.ejs")%>
+    
+</body>
+
+</html>

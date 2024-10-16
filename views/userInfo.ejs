@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info</title>
+    <link rel="stylesheet" href="styles/user-info.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+        <script src="index.js"></script>
+</head>
+
+<body>
+    <%if(message.length!=0){%>
+        <div class="container">
+            <div class="alert alert-<%=message[1]%> w-50" id="myAlert" role="alert">
+              <div class="row">
+               <div class="col-10 text-center mt-1">
+                <%= message[0] %>
+               </div>
+               <div class="col-2">
+                <button class="btn btn-link" id="close"><i class="fa-solid fa-xmark"></i></button>
+                
+               </div>
+              </div>
+            </div>  
+           </div>
+     <%}%>
+    <%-include("partials/header2.ejs",{p:p})%>
+    
+    <section>
+        
+            
+        <div class="user-profile">
+            <div>
+                <img class="user-pic" src="image\profile.jpg">
+            </div>
+                
+            <div>
+                <p class="user-name"><%=displayName%></p>
+                <p class="user-email"><%=email%></p>
+            </div>
+        </div>
+
+        <div class="Account-section">
+            <div>
+                <p>Account</p>
+            </div>
+            <div class="one-liner">
+                <div>Personal Information</div>
+                <div><a href="#"><img src="image\forward icon.jpg" alt=""></a></div>
+            </div>
+            <div class="one-liner">
+                <div>Addresses</div>
+                <div><a href="#"><img src="image\forward icon.jpg" alt=""></a></div>
+            </div>
+            <div class="one-liner">
+                <div>Payments</div>
+                <div><a href="#"><img src="image\forward icon.jpg" alt=""></a></div>
+            </div>
+            <div class="one-liner">
+                <div>Farm Credits</div>
+                <div><a href="#"><img src="image\forward icon.jpg" alt=""></a></div>
+            </div>
+            <div class="one-liner">
+                <div>Notification Settings</div>
+                <div><a href="#"><img src="image\forward icon.jpg" alt=""></a></div>
+            </div>
+        </div>
+
+        <div class="Start-selling-section">
+            <div>
+                <p>Farmers</p>
+            </div>
+            <div class="one-liner">
+                <div>Start Selling
+                    <p class="are-you-a-farmer">Are you a farmer? Start selling your products today</p>
+                </div>
+                <div><a href="#"><img src="image\forward icon.jpg" alt=""></a></div>
+            </div>
+        </div>
+        <div class="Invitaions-section">
+            <div>
+                <p>Invitations</p>
+            </div>
+            <div class="one-liner">
+                <div>Invite Friends</div>
+                <div><a href="#"><img src="image\forward icon.jpg" alt=""></a></div>
+            </div>
+        </div>
+
+        <div class="Support-section">
+            <div>
+                <p>Support</p>
+            </div>
+            <div class="one-liner">
+                <div>Get Help</div>
+                <div><a href="#"><img src="image\forward icon.jpg" alt=""></a></div>
+            </div>
+            <div class="one-liner">
+                <div>Provide Feedback</div>
+                <div><a href="#"><img src="image\forward icon.jpg" alt=""></a></div>
+            </div>
+        </div>
+
+        <div class="Legal-section">
+            <div>
+                <p>Legal</p>
+            </div>
+            <div class="one-liner">
+                <div>Terms of Service</div>
+                <div><a href="#"><img src="image\forward icon.jpg" alt=""></a></div>
+            </div>
+            <div class="one-liner">
+                <div>Privacy Policy</div>
+                <div><a href="#"><img src="image\forward icon.jpg" alt=""></a></div>
+            </div>
+        </div>
+
+
+       
+
+
+    </section>
+
+    <div class="bottom-section">
+        <form action="/take-action" method="POST">
+            <button class="look-like-link" type="submit" name="link-button" value="1"><div class="user-sign-out">Sign Out</div></button>
+        <button class="look-like-link" type="submit" name="link-button" value="2"><div class="user-delete-account">Delete Account</div></button>
+        </form>
+        <div class="copyright">©️ Copyright <span>year</span></div>
+    </div>
+
+    <script>
+ 
+        function vanish(){
+         $('#myAlert').fadeOut('fast');
+        }
+       
+        $("#close").click(vanish)
+       
+        $(document).ready(function () {   
+          setTimeout(function () {
+            vanish()
+          }, 2850);
+        });
+         </script>
+
+    <script>
+        const copyright=document.querySelector(".copyright span")
+        const date=new Date()
+        const year=date.getFullYear()
+        console.log(copyright.innerHTML)
+        console.log(year)
+        copyright.innerHTML=year
+    </script>
+    
+    <%-include("partials/footer.ejs")%>
+</body>
+
+</html>

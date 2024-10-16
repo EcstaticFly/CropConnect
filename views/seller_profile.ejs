@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Shop Profile</title>
+    <link rel="stylesheet" href="styles/seller_profile.css">
+</head>
+
+<body>
+    <%-include("partials/header2.ejs",{p:p})%>
+    <section class="location">
+        <div class="location-section">
+            <div class="location-section-image">
+                <img src="image\seller-profile\8b9c22d9d6ec5c00372fac88e4acbf31bcff25fc_1200x800" alt="">
+            </div>
+            <div>
+                <div class="location-section-address">
+                    <div class="location-section-address-ex">
+                        <div><img src="image\seller-profile\logo_1200x800.png" alt=""></div>
+                        <div>
+                            <h1>Hearty Roots Community</h1>
+                            <h1> Farm</h1>
+                            <p>Germantown,NY</p>
+                        </div>
+                    </div>
+                    <div><button class="shop-now">Shop Now</button></div>
+                    <div id="fav-sh-button"><button class="favorite"><img src="image\seller-profile\icons8-heart-24.png"
+                                alt="">Favorite</button>
+                        <button class="share"><img src="image\seller-profile\icons8-share-50.png" alt="">Share</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <hr id="one">
+
+    <section class="about">
+        <div class="about-section">
+
+            <div class="about-section-info">
+                <h2>About </h2>
+                <p>Hearty Roots is a family farm using sustainable and organic practices to grow the freshest,
+                    healthiest, tastiest food for our community. </p>
+                <br><br>
+                <p>
+                    By joining our Community Supported Agriculture program, you'll receive our best produce throughout
+                    the growing season, with a winter option as well. Pick up is available in several Hudson Valley and
+                    NYC locations. We have been operating our CSA since 2004, providing thousands of our neighbors with
+                    great food!</p>
+            </div>
+            <hr id="hiding">
+            <div class="about-section-contact-info">
+                <div class="contact-us">
+                    <h2>Contact Us</h2>
+                    <a href="mailto:suyash@607.com"><img src="image\seller-profile\icons8-internet-50.png" alt="">suyash607@gmail.com</a>
+                    <a href=""><img src="image\seller-profile\icons8-call-50.png" alt="">+1 (518) 537-3276</a>
+                </div>
+                <div class="social-link">
+                    <h2>Follow Us</h2>
+                    <a href=""><img src="image\seller-profile\icons8-instagram-50.png" alt=""></a>
+                    <a href=""><img src="image\seller-profile\icons8-facebook-48.png" alt=""></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <hr id="two">
+
+    <section class="product">
+        <div class="product-section">
+            <h3>Featured products</h3>
+            <div class="product-section-products ">
+                <form action="/add1" method="POST">
+                    <div class="product-section-products-1 productCard">
+                        <div><img src="image\seller-profile\40849c2a73e24ac58a33f0460bc3b08515da496b_400x400" alt=""></div>
+                        <div>
+                            <p class="productCard-p1">Vegetable</p>
+                            <p class="productCard-p3" name="price">$156.00 for 4 shares</p>
+                            <button type="submit">ADD</button>
+                        </div>
+                    </div>
+                </form>
+
+                <form action="/add1" method="POST">
+                    <div class="product-section-products-2 productCard">
+                        <div><img src="image\seller-profile\40849c2a73e24ac58a33f0460bc3b08515da496b_400x400" alt=""></div>
+                        <div>
+                            <p class="productCard-p1">Vegetable</p>
+                            <p class="productCard-p3" name="price">$156.00 for 4 shares</p>
+                            <button type="submit">ADD</button>
+                        </div>
+                    </div>
+                </form>
+                
+                <form action="/add1" method="post">
+                    <div class="product-section-products-3 productCard">
+                        <div><img src="image\seller-profile\40849c2a73e24ac58a33f0460bc3b08515da496b_400x400" alt=""></div>
+                        <div>
+                            <p class="productCard-p1">Vegetable</p>
+                            
+                            <p class="productCard-p3" name="price">$156.00 for 4 shares</p>
+                            <button type="submit">ADD</button>
+                        </div>
+                    </div>
+                </form>
+
+                <form action="/add1" method="post">
+                    <div class="product-section-products-4 productCard">
+                        <div><img src="image\seller-profile\40849c2a73e24ac58a33f0460bc3b08515da496b_400x400" alt=""></div>
+                        <div>
+                            <p class="productCard-p1">Vegetable</p>
+                           
+                            <p class="productCard-p3" name="price">$156.00 for 4 shares</p>
+                            <button type="submit">ADD</button>
+                        </div>
+                    </div>
+                </form>
+                <form action="/add1" method="post">
+                    <div class="product-section-products-5 productCard">
+                        <div><img src="image\seller-profile\40849c2a73e24ac58a33f0460bc3b08515da496b_400x400" alt=""></div>
+                        <div>
+                            <p class="productCard-p1">Vegetable</p>
+                            
+                            <p class="productCard-p3" name="price">$156.00 for 4 shares</p>
+                            <button type="submit">ADD</button>
+                        </div>
+                    </div>
+                </form>
+               
+                <form action="/add1" method="post">
+                    <div class="product-section-products-6 productCard">
+                        <div><img src="image\seller-profile\40849c2a73e24ac58a33f0460bc3b08515da496b_400x400" alt=""></div>
+                        <div>
+                            <p class="productCard-p1">Vegetable</p>
+                            
+                            <p class="productCard-p3" name="price">$156.00 for 4 shares</p>
+                            <button type="submit">ADD</button>
+                        </div>
+                    </div>
+                </form>
+                
+                <form action="/add1" method="post">
+                    <div class="product-section-products-7 productCard">
+                        <div><img src="image\seller-profile\40849c2a73e24ac58a33f0460bc3b08515da496b_400x400" alt=""></div>
+                        <div>
+                            <p class="productCard-p1" >Vegetable</p>
+                            
+                            <p class="productCard-p3" name="price">$156.00 for 4 shares</p>
+                            <button type="submit">ADD</button>
+                        </div>
+                    </div>
+                </form>
+                
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="reviews">
+
+
+        <div class="reviews-section">
+            <h3>Reviews</h3>
+            <div class="review-section-list">
+                <div class="review-list-item1 reviewCard">
+                    <div class="review-profile">
+                        <div><img src="image\seller-profile\icons8-male-user-25.png" alt=""></div>
+                        <div>
+                            <h4>Maralie Armstrong-Rial</h4>
+                            <p class="star">
+                                <img src="image\seller-profile\icons8-star-25.png" alt="" >
+                                <img src="image\seller-profile\icons8-star-25.png" alt="" >
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <p>This has been our CSA for over 5 years and we've been really happy with the produce from
+                            Hearty
+                            Roots Farm and their partners. </p>
+                    </div>
+                </div>
+                <div class="review-list-item2 reviewCard">
+                    <div class="review-profile">
+                        <div><img src="image\seller-profile\icons8-male-user-25.png" alt=""></div>
+                        <div>
+                            <h4>Maralie Armstrong-Rial</h4>
+                            <p class="star">
+                                <img src="image\seller-profile\icons8-star-25.png" alt="" >
+                                <img src="image\seller-profile\icons8-star-25.png" alt="" >
+                                <img src="image\seller-profile\icons8-star-25.png" alt="">
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <p> </p>
+                    </div>
+                </div>
+                <div class="review-list-item1 reviewCard">
+                    <div class="review-profile">
+                        <div><img src="image\seller-profile\icons8-male-user-25.png" alt=""></div>
+                        <div>
+                            <h4>Maralie Armstrong-Rial</h4>
+                            <p class="star">
+                                <img src="image\seller-profile\icons8-star-25.png" alt="" >
+                                <img src="image\seller-profile\icons8-star-25.png" alt="" >
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <p>This has been our CSA for over 5 years and we've been really happy with the produce from
+                            Hearty
+                            Roots Farm and their partners. </p>
+                    </div>
+                </div>
+                <div class="review-list-item2 reviewCard">
+                    <div class="review-profile">
+                        <div><img src="image\seller-profile\icons8-male-user-25.png" alt=""></div>
+                        <div>
+                            <h4>Maralie Armstrong-Rial</h4>
+                            <p class="star">
+                                <img src="image\seller-profile\icons8-star-25.png" alt="" >
+                                <img src="image\seller-profile\icons8-star-25.png" alt="" >
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <p>This has been our CSA for over 5 years and we've been really happy with the produce from
+                            Hearty
+                            Roots Farm and their partners. </p>
+                    </div>
+                </div>
+                <div class="review-list-item1 reviewCard">
+                    <div class="review-profile">
+                        <div><img src="image\seller-profile\icons8-male-user-25.png" alt=""></div>
+                        <div>
+                            <h4>Maralie Armstrong-Rial</h4>
+                            <p class="star">
+                                <img src="image\seller-profile\icons8-star-25.png" alt="" >
+                                <img src="image\seller-profile\icons8-star-25.png" alt="" >
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <p>This has been our CSA for over 5 years and we've been really happy with the produce from
+                            Hearty
+                            Roots Farm and their partners. </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="add-review">
+        <button>Add a review</button>
+    </section>
+
+    <%-include("partials/footer.ejs")%>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+*{
+    
+    /* margin:; */
+    padding:0px;
+    box-sizing: border-box;
+    
+
+}
+body{
+    min-height:100vh;
+    display:flex;
+    /* align-items: center; */
+    background: rgb(255, 255, 255);
+    justify-content: center; 
+}
+.container{
+    position: relative;
+    max-width:1200px;
+    background-color: rgb(255, 255, 255);
+    width:100%;
+    padding-left:10px;
+    border-radius: 8px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+
+
+}
+h3{
+    font-size: 1.2em;;
+    font-weight:550;
+
+
+}
+.container .form{
+    margin-bottom:20px;
+
+}
+.form .input-box{
+ margin-bottom:20px;
+
+}
+.form .input-box input{
+    height:40px;
+    border-radius: 6px;
+    border:1px solid #707070;
+    width:100%;
+    font-size: 1rem;
+    color: #000000;
+    padding:0 15px;
+    outline:invert;/**/
+    margin-top:0px;
+    margin-left:-5px;
+
+}
+.contact .input-box-2 input{
+    height:40px;
+    /* border-radius: 6px; */
+   border:none;
+   border-bottom:1px solid #707070;
+    width:89%;
+    font-size: 1rem;
+    color: #000000;
+    padding:0 10px;
+    outline:invert;/**/
+    margin-top:0px;
+    margin-bottom:7px;
+    margin-left:-5px;
+    margin-right:-20px;
+
+}
+.contact .input-box-3 input{
+    height:30px;
+    /* border-radius: 6px; */
+   border:none;
+   border-bottom:1px solid #707070;
+    width:19%;
+    font-size: 1rem;
+    color: #000000;
+    padding:0 10px;
+    outline: invert;/**/
+    margin-top:0px;
+    margin-bottom:7px;
+    margin-right:14px;
+
+}
+.About .input-box-4 input{
+    height:70px;
+    border-radius: 6px;
+    border:1px solid #707070;
+    width:100%;
+    font-size: 1rem;
+    color: #000000;
+    padding:0 15px;
+    outline:invert;
+    margin-top:0px;
+    margin-left:-5px;
+
+
+}
+.add-img .img-box-border .input{
+    width:40px;
+    height:100px;
+    cursor:pointer;
+    border:1px solid block;
+}
+
+
+.form .column{
+    display:flex;
+}
+hr{
+    margin-top:-3px;
+    margin-bottom:20px;
+    width:100%;
+    margin-left:-5px;
+}
+.form button{
+    height:40px;
+    width:20%;
+    background-color: rgb(40, 144, 40);
+    font-size: larger;
+    color:white;
+    margin-top:40px;
+    border-radius: 15px;
+    border-width: 0px;
+    transition:all 0.2s ease;
+    cursor:pointer;
+    font-weight: 400;
+}
+.form button:hover{
+    background-color: rgb(17, 113, 17);
+
+}
+.box67{
+    width:120px;
+    height:80px;
+    border:1px solid black;
+    border-radius: 10px;
+    text-align:center;
+    cursor:pointer;
+    
+    
+
+}
+@media screen and (max-width:500px){
+    .form .column{
+        flex-wrap:wrap;
+    }
+}

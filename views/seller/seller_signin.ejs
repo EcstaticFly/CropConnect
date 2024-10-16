@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/seller_signin.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="body">
+        <div><h2>Sign In</h2></div>
+        <br>
+        
+        <form action="/seller-sign-in" method="POST">
+            <div class="name">
+                <div class="mail"><i class="fa-solid fa-envelope"></i></div>
+                <div><input type="email" name="sellerGivenEmail" id="email" placeholder="Email"></div>
+                
+            </div>
+            <div class="line"><hr></div>
+            <div class="name1">
+                <div class="icon"><i class="fa-solid fa-lock"></i></div>
+                <div><input type="password" name="sellerGivenPassword" placeholder="Password" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></div>
+               
+            </div>
+            <div class="line"><hr></div>
+            <div class="reg"><button type="submit" class="btn btn"><b>Register</b></button></div>
+            <br>
+            <div class="terms">Need to create an account? <b>Register.</b></div>
+        </form>
+        <br>
+        <div class="para">Forgot password? <b>Reset it.</b></div>
+        <br>
+        <div class="lastline">
+            <div class="line1"><hr></div>
+            <div><b>or</b></div>
+            <div class="line2"><hr></div>
+        </div>
+        <br>
+        
+        
+        <div class="reg" style="background-color:#DB4437 ;"><i class="fa-brands fa-google"></i><a href="#"><button type="button" class="btn btn"><b>Login with Google</b></button></a></div>
+
+    </div>
+
+</body>
+</html>

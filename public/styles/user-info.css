@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #222;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+section {
+    width: 74%;
+    margin: 2.6rem 13%;
+    min-width: 300px;
+    align-items: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+
+}
+
+.user-pic {
+    border-radius: 100%;
+    width: 5rem;
+    height: 5rem;
+    margin-right: 1.3rem;
+    cursor: pointer;
+}
+
+.user-name {
+    font-size: 2rem;
+    font-family: MontserratRegular;
+}
+
+.user-email {
+    font-size: 1.1rem;
+    color: #AAAAAA;
+}
+
+.Account-section {
+    padding-top: 2rem;
+
+}
+
+.one-liner {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+
+.Account-section p,
+.Start-selling-section p,
+.Invitaions-section p,
+.Support-section p,
+.Legal-section p {
+    color: #AAAAAA;
+    font-size: 0.9rem;
+    padding-bottom: 0.4rem;
+    font-weight: 600;
+    font-stretch: extra-expanded;
+}
+
+.Start-selling-section, .Legal-section, .Support-section,.Invitaions-section {
+    padding-top: 0.8rem;
+}
+
+.are-you-a-farmer {
+    font-weight: 100;
+
+}
+
+.bottom-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.bottom-section div{
+    padding-top: 1rem;
+}
+
+.user-sign-out{
+    color: rgb(109, 190, 75);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.user-delete-account{
+    color: rgb(170, 24, 44);
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.copyright,.copyright span{
+    margin-bottom: 1rem;
+    color: #AAAAAA;    
+}
+/* 
+@media screen and (max-width :500px){
+    section{
+        margin: 1.6rem 2% 0 2%;
+    }
+} */
+
+
+
